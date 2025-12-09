@@ -237,3 +237,4 @@ npx cypress run --spec "cypress/e2e/shopperAmazon.cy.js"
 ```bash
 npx cypress run --browser chrome
 ```
+
