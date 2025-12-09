@@ -1,96 +1,114 @@
 # 📘 **Desafio Técnico – Automação com Cypress**
 
-Este repositório contém a automação de um fluxo de shopper no e-commerce Amazon, desenvolvido como parte de um desafio técnico.
+Este projeto contém uma automação end-to-end desenvolvida em Cypress, simulando o fluxo de um usuário (shopper) no site da Amazon: pesquisa de produto, validação dos resultados, seleção de item, adição ao carrinho e verificação final.
 
-O teste consiste em acessar o site, pesquisar por um produto, validar que os resultados exibidos correspondem ao termo pesquisado, selecionar um item da lista, adicioná-lo ao carrinho e confirmar que o produto foi corretamente inserido no carrinho.
-
----
-
-# 🚀 **Tecnologias Utilizadas**
-
-### **Node.js**
-
-* É o ambiente que permite executar JavaScript fora do navegador.
-* Necessário para rodar o Cypress e instalar dependências.
-* Download: [https://nodejs.org/](https://nodejs.org/)
-
-### **Visual Studio Code**
-
-* Editor de código recomendado.
-
-* Extensões úteis:
-
-  * *ESLint*: valida e padroniza o código, encontrando erros automaticamente.
-
-  * *Prettier*: formata o código de forma consistente e organizada ao salvar.
-
-  * *Cypress Snippets*: fornece atalhos para escrever comandos Cypress mais rápido.
-
-* Download: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
-
-### **Cypress**
-
-* Framework de testes end-to-end para aplicações web.
-* Rápido, moderno e extremamente fácil de usar.
+O foco deste README é **ensinar exatamente como rodar o projeto**, abrir o relatório em HTML e entender a estrutura.
 
 ---
 
-# 📥 **Como Clonar Este Projeto**
+# 🔧 **Requisitos Obrigatórios**
 
-Abra seu terminal e execute:
+Antes de rodar o projeto, você precisa ter instalado:
+
+### ✔️ **Node.js**
+
+Ambiente necessário para rodar o Cypress.
+Download: [https://nodejs.org/](https://nodejs.org/)
+
+### ✔️ **Visual Studio Code (VS Code)**
+
+Editor recomendado para executar o projeto e visualizar o relatório.
+
+Instale também a extensão obrigatória:
+
+### 🔵 **Extensão obrigatória: Live Server**
+
+Ela será usada para abrir o arquivo `index.html` com o resultado do teste.
+
+> **Atenção:** Para o Live Server funcionar, você precisa estar com o arquivo HTML aberto no VS Code antes de clicar em *Go Live*.
+
+---
+
+# 📥 **Clonando o Repositório**
 
 ```bash
 git clone https://github.com/<seu-usuario>/<seu-repositorio>.git
-```
-
-Em seguida, acesse a pasta:
-
-```bash
 cd desafioTecnico
 ```
 
 ---
 
-# 🔧 **Instalação do Projeto**
+# 📦 **Instalação do Projeto**
 
-### 1️⃣ Instalar dependências do Node
+### 1️⃣ Instalar dependências
 
 ```bash
 npm install
 ```
 
-### 2️⃣ Instalar o Cypress
+### 2️⃣ Instalar Cypress (caso não esteja no seu ambiente)
 
 ```bash
 npm install cypress --save-dev
 ```
 
-**O que significa o `--save-dev`?**
-Ele adiciona o Cypress como dependência de **desenvolvimento**, ou seja, usada apenas durante testes — não em produção.
-
 ---
 
-# ▶️ **Como Rodar o Cypress**
+# ▶️ **Rodando os Testes**
 
-### **Abrir a interface gráfica:**
+## **Abrir a interface do Cypress**
 
 ```bash
 npx cypress open
 ```
 
-### **Rodar em modo headless (ideal para CI/CD):**
+Selecione o navegador e clique no teste:
+
+```
+cypress/e2e/shopperAmazon.cy.js
+```
+
+## **Rodar em modo headless**
 
 ```bash
 npx cypress run
 ```
 
-Esses comandos usam a versão instalada dentro do projeto, garantindo compatibilidade.
+## **Rodar apenas um teste específico**
+
+```bash
+npx cypress run --spec "cypress/e2e/shopperAmazon.cy.js"
+```
+
+---
+
+# 📊 **Como Visualizar o Relatório HTML do Teste**
+
+Após rodar o teste no modo **headless**, o relatório será gerado na pasta:
+
+```
+cypress/reports/index.html
+```
+
+Para abrir esse relatório corretamente, use o **Live Server**:
+
+### 1. No VS Code, abra o arquivo:
+
+```
+cypress/reports/index.html
+```
+
+### 2. Com o arquivo HTML aberto, clique em **Go Live** no rodapé do VS Code.
+
+Você verá algo parecido com:
+
+![Image](https://docs.cypress.io/img/app/reporters/mochawesome-report.png?utm_source=chatgpt.com)
+
+![Image](https://browserstack.wpenginepowered.com/wp-content/uploads/2022/10/Cypress-Inline-HTML-Report-for-Cypress-9-or-below.png?utm_source=chatgpt.com)
 
 ---
 
 # 🗂️ **Estrutura do Projeto**
-
-A estrutura deste repositório segue o padrão oficial do Cypress:
 
 ```
 DESAFIOTECNICO/
@@ -98,7 +116,8 @@ DESAFIOTECNICO/
  │   ├─ e2e/
  │   │   └─ shopperAmazon.cy.js
  │   ├─ fixtures/
- │   │   └─ example.json
+ │   ├─ reports/
+ │   │   └─ index.html   ← relatório do teste
  │   ├─ support/
  │       ├─ commands.js
  │       └─ e2e.js
@@ -111,149 +130,30 @@ DESAFIOTECNICO/
 
 ---
 
-## 📌 **Detalhamento das pastas**
+# 📝 **Sobre os Arquivos Importantes**
 
-### 📁 **cypress/**
+### 📄 **shopperAmazon.cy.js** (principal teste e2e)
 
-Pasta principal onde toda a automação acontece.
+Contém todo o fluxo automatizado: pesquisa, validações e adição ao carrinho.
 
----
+### 📄 **commands.js**
 
-### 📁 **cypress/e2e/**
+Onde ficam os comandos customizados usados nos testes.
 
-Armazena os arquivos de teste.
-Exemplo:
+### 📄 **index.html**
 
-* **shopperAmazon.cy.js** → contém o fluxo automatizado do desafio (login, ações, validações).
-
----
-
-### 📁 **cypress/fixtures/**
-
-Usada para armazenar dados estáticos, massa de teste ou mocks.
-Exemplo:
-
-* **example.json** → arquivo de exemplo gerado pelo Cypress.
+Gerado automaticamente após rodar os testes.
+Precisa ser aberto com **Live Server**.
 
 ---
 
-### 📁 **cypress/support/**
+# 📌 **Pasta prototipo/**
 
-Contém arquivos que **suportam a execução dos testes**.
+Dentro da pasta `prototipo` estão os arquivos relacionados ao **protótipo funcional dos testes** usados na fase inicial do desafio.
 
-#### `commands.js`
+Conteúdo:
 
-* Aqui você cria **comandos customizados do Cypress**.
-  Exemplo: login, start, submitLogin, etc.
-
-#### `e2e.js`
-
-* Carrega automaticamente antes de cada teste.
-* Importa `commands.js`.
-* Pode conter tratativas globais (ex.: ignorar erros de terceiros).
-
----
-
-### 📄 **cypress.config.js**
-
-Arquivo principal de configuração do Cypress.
-Aqui você define:
-
-* Base URL
-* Padrão dos testes
-* Configs de execução
-* Setup do Node (tasks)
-
----
-
-### 📄 **package.json**
-
-Arquivo que descreve o projeto:
-
-* Dependências (como o Cypress)
-* Scripts executáveis
-* Versão do Node
-* Informações do projeto
-
----
-
-### 📄 **package-lock.json**
-
-Controle detalhado das versões instaladas — garante que todo mundo do time use exatamente as mesmas versões.
-
----
-
-### 📄 **README.md**
-
-Arquivo que você está lendo agora 😉.
-Serve como documentação do repositório.
-
----
-
-# 🧪 **Executando o Teste do Desafio**
-
-Depois que tudo estiver instalado, rode:
-
-```bash
-npx cypress open
-```
-
-E clique no teste:
-
-```
-cypress/e2e/shopperAmazon.cy.js
-```
-
----
-
-# ⚙️ **Como Rodar os Testes no Cypress (Interface + Headless)**
-
-### **Rodar usando a interface gráfica (Cypress UI):**
-
-```bash
-npx cypress open
-```
-
----
-
-### **Rodar em modo headless (sem abrir navegador):**
-
-```bash
-npx cypress run
-```
-
----
-
-### **Rodar um teste específico:**
-
-```bash
-npx cypress run --spec "cypress/e2e/shopperAmazon.cy.js"
-```
-
----
-
-### **Rodar em Chrome headless:**
-
-```bash
-npx cypress run --browser chrome
-```
-
----
-
-# 📄 **Cenários de Teste (Gherkin)**
-
-Os cenários de teste foram escritos em **Gherkin** e organizados por funcionalidades, cenários e tags.
-
-A planilha disponibilizada permite acompanhar facilmente o objetivo de cada teste, os passos e o resultado esperado.
-
-Para visualizar, basta fazer o download dos arquivos na pasta:
-
-
-### Arquivos incluídos:
-
-- 📄 **leiaTestesPrototipo.txt** — explicações gerais  
-- 📊 **Testes Protótipo.xlsx** — planilha com todos os cenários em Gherkin  
-- 📕 **testesPrototipos.pdf** — versão em PDF para visualização em qualquer dispositivo  
-
----
+* **leiaTestesPrototipo.txt** → arquivo explicativo com instruções gerais.
+* **Testes Prototipo.xlsx** → planilha contendo todos os cenários escritos em Gherkin.
+* **testesPrototipos.pdf** → versão em PDF dos mesmos cenários, apenas para visualização do modelo.
 
