@@ -204,6 +204,7 @@ E clique no teste:
 cypress/e2e/shopperAmazon.cy.js
 ```
 
+<<<<<<< HEAD
 ---
 
 # ⚙️ **Como Rodar os Testes no Cypress (Interface + Headless)**
@@ -257,3 +258,5 @@ Para visualizar, basta fazer o download dos arquivos na pasta:
 
 ---
 
+=======
+>>>>>>> ae7cc905a8fd871322469124b92687f6e8448394
