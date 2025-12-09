@@ -204,37 +204,3 @@ E clique no teste:
 cypress/e2e/shopperAmazon.cy.js
 ```
 
----
-
-# ⚙️ **Como Rodar os Testes no Cypress (Interface + Headless)**
-
-### **Rodar usando a interface gráfica (Cypress UI):**
-
-```bash
-npx cypress open
-```
-
----
-
-### **Rodar em modo headless (sem abrir navegador):**
-
-```bash
-npx cypress run
-```
-
----
-
-### **Rodar um teste específico:**
-
-```bash
-npx cypress run --spec "cypress/e2e/shopperAmazon.cy.js"
-```
-
----
-
-### **Rodar em Chrome headless:**
-
-```bash
-npx cypress run --browser chrome
-```
-
