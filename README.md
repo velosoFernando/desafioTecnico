@@ -40,7 +40,7 @@ O teste consiste em acessar o site, pesquisar por um produto, validar que os res
 Abra seu terminal e execute:
 
 ```bash
-git clone https://github.com/<seu-usuario>/<seu-repositorio>.git
+https://github.com/<seu-usuario>/desafioTecnico.git
 ```
 
 Em seguida, acesse a pasta:
