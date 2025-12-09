@@ -32,7 +32,16 @@ Ela será usada para abrir o arquivo `index.html` com o resultado do teste.
 # 📥 **Clonando o Repositório**
 
 ```bash
+<<<<<<< HEAD
 git clone https://github.com/<seu-usuario>/<seu-repositorio>.git
+=======
+https://github.com/<seu-usuario>/desafioTecnico.git
+```
+
+Em seguida, acesse a pasta:
+
+```bash
+>>>>>>> 93d13da4c12ddef28f57432d4acb42211faf72be
 cd desafioTecnico
 ```
 
