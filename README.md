@@ -17,13 +17,16 @@ O teste consiste em acessar o site, pesquisar por um produto, validar que os res
 ### **Visual Studio Code**
 
 * Editor de código recomendado.
+
 * Extensões úteis:
 
-    * *ESLint*: valida e padroniza o código, encontrando erros automaticamente.
+  * *ESLint*: valida e padroniza o código, encontrando erros automaticamente.
 
-    * *Prettier*: formata o código de forma consistente e organizada ao salvar.
+  * *Prettier*: formata o código de forma consistente e organizada ao salvar.
 
-    * *Cypress Snippets*: fornece atalhos para escrever comandos Cypress mais rápido.
+  * *Cypress Snippets*: fornece atalhos para escrever comandos Cypress mais rápido.
+
+* Download: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
 
 ### **Cypress**
 
@@ -199,6 +202,38 @@ E clique no teste:
 
 ```
 cypress/e2e/shopperAmazon.cy.js
-````
+```
 
+---
 
+# ⚙️ **Como Rodar os Testes no Cypress (Interface + Headless)**
+
+### **Rodar usando a interface gráfica (Cypress UI):**
+
+```bash
+npx cypress open
+```
+
+---
+
+### **Rodar em modo headless (sem abrir navegador):**
+
+```bash
+npx cypress run
+```
+
+---
+
+### **Rodar um teste específico:**
+
+```bash
+npx cypress run --spec "cypress/e2e/shopperAmazon.cy.js"
+```
+
+---
+
+### **Rodar em Chrome headless:**
+
+```bash
+npx cypress run --browser chrome
+```
