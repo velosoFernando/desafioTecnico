@@ -1,204 +1,103 @@
-# 📘 **Desafio Técnico – Automação com Cypress**
+🔥 Desafio Técnico – Automação E2E com Cypress
 
-Este repositório contém a automação de um fluxo de shopper no e-commerce Amazon, desenvolvido como parte de um desafio técnico.
+Automação completa de um fluxo de compra na Amazon, iniciando pela busca de produto até a validação final no carrinho.
+Projeto criado para demonstrar domínio de automação, boas práticas, organização e escrita clara de testes.
 
-O teste consiste em acessar o site, pesquisar por um produto, validar que os resultados exibidos correspondem ao termo pesquisado, selecionar um item da lista, adicioná-lo ao carrinho e confirmar que o produto foi corretamente inserido no carrinho.
+🧰 Tech & Tools
 
----
+Principais tecnologias utilizadas no projeto
 
-# 🚀 **Tecnologias Utilizadas**
+<p align="left"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" /> <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=fff" /> <img src="https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=fff" /> <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=fff" /> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=fff" /> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=fff" /> <img src="https://img.shields.io/badge/Amazon-FF9900?style=for-the-badge&logo=amazon&logoColor=000" /> </p>
+👨‍💻 QA – Sobre Mim
 
-### **Node.js**
+Sou QA com foco em automação e criação de testes estruturados e confiáveis.
+Meu objetivo é entregar qualidade com eficiência, clareza e consistência.
 
-* É o ambiente que permite executar JavaScript fora do navegador.
-* Necessário para rodar o Cypress e instalar dependências.
-* Download: [https://nodejs.org/](https://nodejs.org/)
+O que aplico no dia a dia
 
-### **Visual Studio Code**
+✔️ Escrita de testes E2E usando Cypress
 
-* Editor de código recomendado.
-* Extensões úteis:
+✔️ Criação de seletores estáveis e legíveis
 
-    * *ESLint*: valida e padroniza o código, encontrando erros automaticamente.
+✔️ Validações funcionais orientadas ao comportamento do usuário
 
-    * *Prettier*: formata o código de forma consistente e organizada ao salvar.
+✔️ Organização escalável em pastas, comandos e fixtures
 
-    * *Cypress Snippets*: fornece atalhos para escrever comandos Cypress mais rápido.
+✔️ Execuções em pipeline e testes headless
 
-### **Cypress**
+✔️ Geração de logs, evidências e relatórios
 
-* Framework de testes end-to-end para aplicações web.
-* Rápido, moderno e extremamente fácil de usar.
+Meu estilo como QA
 
----
+Gosto de código limpo e direto.
 
-# 📥 **Como Clonar Este Projeto**
+Evito complexidade desnecessária.
 
-Abra seu terminal e execute:
+Priorizo confiabilidade ao invés de “testes bonitos”.
 
-```bash
+Busco sempre aprendizado contínuo.
+
+📥 Como Clonar o Projeto
 git clone https://github.com/<seu-usuario>/<seu-repositorio>.git
-```
-
-Em seguida, acesse a pasta:
-
-```bash
 cd desafioTecnico
-```
 
----
-
-# 🔧 **Instalação do Projeto**
-
-### 1️⃣ Instalar dependências do Node
-
-```bash
+🔧 Instalação
 npm install
-```
-
-### 2️⃣ Instalar o Cypress
-
-```bash
 npm install cypress --save-dev
-```
 
-**O que significa o `--save-dev`?**
-Ele adiciona o Cypress como dependência de **desenvolvimento**, ou seja, usada apenas durante testes — não em produção.
+▶️ Execução dos Testes
+Interface do Cypress (modo gráfico)
 
----
+Ideal para visualizar passo a passo:
 
-# ▶️ **Como Rodar o Cypress**
-
-### **Abrir a interface gráfica:**
-
-```bash
 npx cypress open
-```
 
-### **Rodar em modo headless (ideal para CI/CD):**
 
-```bash
+Selecione E2E Testing → escolha o navegador → execute:
+
+cypress/e2e/shopperAmazon.cy.js
+
+Modo Headless (sem abrir navegador)
+
+Usado em CI/CD ou execuções rápidas:
+
 npx cypress run
-```
 
-Esses comandos usam a versão instalada dentro do projeto, garantindo compatibilidade.
+Chrome headless
+npx cypress run --browser chrome
 
----
+Executar arquivo específico
+npx cypress run --spec "cypress/e2e/shopperAmazon.cy.js"
 
-# 🗂️ **Estrutura do Projeto**
-
-A estrutura deste repositório segue o padrão oficial do Cypress:
-
-```
+🗂 Estrutura do Projeto
 DESAFIOTECNICO/
  ├─ cypress/
  │   ├─ e2e/
  │   │   └─ shopperAmazon.cy.js
  │   ├─ fixtures/
- │   │   └─ example.json
  │   ├─ support/
  │       ├─ commands.js
  │       └─ e2e.js
  │
  ├─ cypress.config.js
  ├─ package.json
- ├─ package-lock.json
  └─ README.md
-```
 
----
+🧪 Fluxo Automatizado
 
-## 📌 **Detalhamento das pastas**
+Acessar Amazon
 
-### 📁 **cypress/**
+Pesquisar produto
 
-Pasta principal onde toda a automação acontece.
+Validar resultados da busca
 
----
+Selecionar item da lista
 
-### 📁 **cypress/e2e/**
+Adicionar ao carrinho
 
-Armazena os arquivos de teste.
-Exemplo:
+Validar que o produto entrou corretamente
 
-* **shopperAmazon.cy.js** → contém o fluxo automatizado do desafio (login, ações, validações).
+📄 Licença
 
----
-
-### 📁 **cypress/fixtures/**
-
-Usada para armazenar dados estáticos, massa de teste ou mocks.
-Exemplo:
-
-* **example.json** → arquivo de exemplo gerado pelo Cypress.
-
----
-
-### 📁 **cypress/support/**
-
-Contém arquivos que **suportam a execução dos testes**.
-
-#### `commands.js`
-
-* Aqui você cria **comandos customizados do Cypress**.
-  Exemplo: login, start, submitLogin, etc.
-
-#### `e2e.js`
-
-* Carrega automaticamente antes de cada teste.
-* Importa `commands.js`.
-* Pode conter tratativas globais (ex.: ignorar erros de terceiros).
-
----
-
-### 📄 **cypress.config.js**
-
-Arquivo principal de configuração do Cypress.
-Aqui você define:
-
-* Base URL
-* Padrão dos testes
-* Configs de execução
-* Setup do Node (tasks)
-
----
-
-### 📄 **package.json**
-
-Arquivo que descreve o projeto:
-
-* Dependências (como o Cypress)
-* Scripts executáveis
-* Versão do Node
-* Informações do projeto
-
----
-
-### 📄 **package-lock.json**
-
-Controle detalhado das versões instaladas — garante que todo mundo do time use exatamente as mesmas versões.
-
----
-
-### 📄 **README.md**
-
-Arquivo que você está lendo agora 😉.
-Serve como documentação do repositório.
-
----
-
-# 🧪 **Executando o Teste do Desafio**
-
-Depois que tudo estiver instalado, rode:
-
-```bash
-npx cypress open
-```
-
-E clique no teste:
-
-```
-cypress/e2e/shopperAmazon.cy.js
-````
-
+Projeto de caráter educativo e demonstrativo.
 
