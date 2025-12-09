@@ -238,3 +238,22 @@ npx cypress run --spec "cypress/e2e/shopperAmazon.cy.js"
 npx cypress run --browser chrome
 ```
 
+---
+
+# 📄 **Cenários de Teste (Gherkin)**
+
+Os cenários de teste foram escritos em **Gherkin** e organizados por funcionalidades, cenários e tags.
+
+A planilha disponibilizada permite acompanhar facilmente o objetivo de cada teste, os passos e o resultado esperado.
+
+Para visualizar, basta fazer o download dos arquivos na pasta:
+
+
+### Arquivos incluídos:
+
+- 📄 **leiaTestesPrototipo.txt** — explicações gerais  
+- 📊 **Testes Protótipo.xlsx** — planilha com todos os cenários em Gherkin  
+- 📕 **testesPrototipos.pdf** — versão em PDF para visualização em qualquer dispositivo  
+
+---
+

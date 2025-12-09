@@ -1,0 +1,9 @@
+## Cenários de Testes
+
+Os cenários de teste estão escritos em Gherkin e organizados por funcionalidades, cenários e tags.
+
+A planilha disponibilizada permite acompanhar facilmente o objetivo de cada teste e o resultado esperado.
+
+Para visualizar, basta fazer o download da planilha e abri-la em sua máquina.
+
+Também estou deixando um pdf para facilitar a visualização em diferentes dispositivos.
